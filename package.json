@@ -1,0 +1,27 @@
+{
+  "name": "erp-app",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Peipei Shu",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyeeda/erp-app"
+  },
+  "bugs": {
+    "url": "https://github.com/zyeeda/erp-app/issues"
+  },
+  "homepage": "https://github.com/zyeeda/erp-app#readme",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "react-dom"
+  ],
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-native": "^0.24.1"
+  }
+}
