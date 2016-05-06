@@ -17,18 +17,18 @@ const styles = StyleSheet.create({
 });
 
 const Button = (props) => {
-  const { children, onClick } = props
+  const { children, onClick } = props;
 
   return (
     <TouchableOpacity onPress={onClick} style={styles.button}>
       <Text>{children}</Text>
     </TouchableOpacity>
   )
-}
+};
 
 Button.PropTypes = {
   children: React.PropTypes.string.isRequired,
   onClick: React.PropTypes.func.isRequired
-}
+};
 
 export default Button

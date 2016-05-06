@@ -2,7 +2,7 @@
  * Created by vimniky on 5/5/16.
  */
 
-//we are using namespaceing to prevent module's action type collision
+//Using namespaceing to prevent module's action type collision
 //every module should have a unique name. the best practice is to set name
 //base on module's name
 

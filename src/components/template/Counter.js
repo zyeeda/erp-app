@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     width: 40,
     textAlign: 'center'
   }
-})
+});
 
 const Counter = (props) => {
   const { decrementFn, children, incrementFn, incrementWithDelayFn } = props ;
@@ -30,7 +30,7 @@ const Counter = (props) => {
       <Button onClick={incrementWithDelayFn}>+ with delay</Button>
     </View>
   )
-}
+};
 
 Counter.propTypes = {
   decrementFn: React.PropTypes.func.isRequired,

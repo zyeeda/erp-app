@@ -9,10 +9,6 @@ const initialState = {
   counters: { }
 };
 
-//you can do better here, I was just showing that you need to make a new copy
-//of state. It is ok to deep copy of state. It will prevent unseen bugs in the future
-//for better performance you can use immutableJS
-
 //handleActions is a helper function to instead of using a switch case statement,
 //we just use the regular map with function state attach to it.
 
@@ -58,5 +54,5 @@ export default handleActions({
         [id]: state.counters[id] - 1
       }
     }
-  },
+  }
 }, initialState)

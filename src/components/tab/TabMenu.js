@@ -8,14 +8,11 @@ import Button from './Button'
 
 const styles = StyleSheet.create({
   container: {
+    // top : 550,
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  label: {
-    width: 40,
-    textAlign: 'center'
   }
 });
 
