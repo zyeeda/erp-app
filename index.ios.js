@@ -1,4 +1,6 @@
-import {AppRegistry} from 'react-native'
-import setup from './src/setup'
+'use strict';
 
-AppRegistry.registerComponent('erpApp', setup );
+import React, { AppRegistry } from 'react-native';
+import Main from './src';
+
+AppRegistry.registerComponent('erpApp', () => Main);
