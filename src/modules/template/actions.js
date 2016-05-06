@@ -33,7 +33,7 @@ export const decrement = (id) => {
       id
     }
   }
-}
+};
 
 //tells the reducer, we need a new counter on the scene with a new ID
 export const newCounter = () => {
