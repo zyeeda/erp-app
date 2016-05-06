@@ -1,12 +1,11 @@
 /**
  * Created by vimniky on 5/5/16.
  */
-import React, { Component } from 'react-native';
+import React, { Component ,View } from 'react-native';
 import { Provider } from 'react-redux';
 
-import { template } from './modules'
-// import { tab } from './modules'
-// <tab.App/>
+import { template , tab } from './modules'
+
 import createStore from './createStore'
 
 const store = createStore();
@@ -14,10 +13,14 @@ const store = createStore();
 const Main = () => {
   return (
     <Provider store={store}>
-      <template.App />
+      <View>
+        <template.App />
+        <tab.App />
+      </View>
     </Provider>
   )
 };
 
 export default Main
+
 

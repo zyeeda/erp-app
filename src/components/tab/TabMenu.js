@@ -30,12 +30,13 @@ const TabMenu = (props) => {
   const { activate , currentActiveIndex } = props;
 
   const buttons = items.map(
-    (title , i) => {
+    (item , i) => {
       return <Button
         key={i}
-        isActive={currentActiveIndex == i }
-        inedex={i} onClick={activate}>
-        {title}
+        index={i}
+        isActive={ currentActiveIndex == i }
+        onClick={activate}>
+        {item.title }
       </Button>
     }
   );
@@ -49,6 +50,6 @@ const TabMenu = (props) => {
 
 TabMenu.propTypes = {
   activate: React.PropTypes.func.isRequired,
-  currentIndex: React.PropTypes.number.isRequired
+  currentActiveIndex: React.PropTypes.number.isRequired
 };
 export default TabMenu

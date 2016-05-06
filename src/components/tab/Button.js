@@ -8,10 +8,9 @@ const styles = StyleSheet.create({
   button: {
     height: 20,
     padding: 20,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#efefef',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 5
   },
   active : {
     backgroundColor:'red',
@@ -21,18 +20,20 @@ const styles = StyleSheet.create({
 });
 
 const Button = (props) => {
-  const { children, onClick , isActive } = props;
-
+  const { children, onClick , isActive , index } = props;
   return (
-    <TouchableOpacity onPress={onClick} style={styles.button}>
-      <Text style={isActive? styles.active : null }>{children}</Text>
+    <TouchableOpacity
+      onPress={() => onClick(index)}
+      style={[styles.button ,isActive?  styles.active: null]}>
+      <Text >{children}</Text>
     </TouchableOpacity>
   )
 };
 Button.PropTypes = {
   children: React.PropTypes.string.isRequired,
   onClick: React.PropTypes.func.isRequired,
-  isActive : React.PropTypes.bool.isRequired
+  isActive : React.PropTypes.bool.isRequired,
+  index : React.PropTypes.bool.isRequired
 };
 
 export default Button

@@ -3,12 +3,12 @@
  */
 
 import template  from './template'
-// import tab  from './tab'
+import tab  from './tab'
 
 //in this section keep importing your modules
 
 //and exporting them here
-export default {
-  template
-  // tab
+export  {
+  template,
+  tab
 }

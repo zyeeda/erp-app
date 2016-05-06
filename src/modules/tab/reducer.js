@@ -3,14 +3,14 @@
  */
 
 import { handleActions } from 'redux-actions'
-import { ACTIVITE } from './constants'
+import { ACTIVATE } from './constants'
 
 const initialState = {
   currentActiveIndex : 0
 };
 
 export default handleActions({
-  [ACTIVITE]: (state, action) => {
+  [ACTIVATE]: (state, action) => {
     return Object.assign({}, state , {
       currentActiveIndex : action.index
     });
