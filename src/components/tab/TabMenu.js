@@ -19,18 +19,36 @@ const styles = StyleSheet.create({
   }
 });
 
+const items = [
+  {title: '首页'},
+  {title: '库存'},
+  {title: '销售'},
+  {title: '统计'},
+  {title: '基础'}
+];
 const TabMenu = (props) => {
-  const { activate } = props;
+  const { activate , currentActiveIndex } = props;
+
+  const buttons = items.map(
+    (title , i) => {
+      return <Button
+        key={i}
+        isActive={currentActiveIndex == i }
+        inedex={i} onClick={activate}>
+        {title}
+      </Button>
+    }
+  );
 
   return (
     <View style={styles.container}>
-      <Button onclick={activate}> 首页 </Button>
+      {buttons}
     </View>
   );
 };
 
 TabMenu.propTypes = {
-  activate: React.PropTypes.func.isRequired
+  activate: React.PropTypes.func.isRequired,
+  currentIndex: React.PropTypes.number.isRequired
 };
-
 export default TabMenu

@@ -6,7 +6,7 @@
 import React, { StyleSheet, View } from 'react-native'
 import { connect } from 'react-redux'
 
-// import { Counters, Counter } from './../../components/template'
+import { TabMenu } from './../../components/tab'
 import * as actions from './actions'
 
 // const styles = StyleSheet.create({
@@ -17,56 +17,41 @@ import * as actions from './actions'
 //   }
 // }) ;
 
-const renderTab = (activate) => {
-    return (
-      <Tab activate= {activate } />
-    );
-} ;
-
 const App = (props) => {
-  const {
-    addNewCounter,
-    counters,
-    decrement,
-    increment,
-    incrementWithDelay
-  } = props ;
-
+  // const {
+  //   currentActiveIndex,
+  //   activate
+  // } = props ;
   return (
     <View style={styles.container}>
-      <Counters addFn={addNewCounter}>
-        {renderCounters(counters, decrement, increment, incrementWithDelay)}
-      </Counters>
+      <TabMenu {...props} />
     </View>
-  )
-};
+  );
 
-App.displayName = 'template';
+} ;
 
-//it is a good practice to always indicate what type of props does your component
-//receive. This is really good for documenting and prevent you from a lot of bug during
-//development mode. Remember, all of these will be ignored once you set it to production.
+App.displayName = 'Tab';
+
 App.propTypes = {
-  addNewCounter: React.PropTypes.func.isRequired,
-  counters: React.PropTypes.object.isRequired,
-  increment: React.PropTypes.func.isRequired,
-  decrement: React.PropTypes.func.isRequired,
-  incrementWithDelay: React.PropTypes.func.isRequired
+  activate: React.PropTypes.func.isRequired,
+  currentActiveIndex: React.PropTypes.number.isRequired
 };
 
-//Here's the most complex part of our template. connect is a function which selects,
-//which part of our state tree you need to pass to your component. also, since
-//my App component is pure function, i am injecting addNewCounter, increment and
-//decrement functions wrapped with dispatch. I think this is the best and cleanest
-//way to seperate your connect and your pure function.
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onClick: (index) => {
+      dispatch(actions.activate(index))
+    }
+  }
+};
+
+const mapStateToProps = (state) => {
+  return {
+    currentActiveIndex: state.tab.currentActiveIndex
+  }
+};
+
 export default connect(
-  (state) => ({
-    counters: state.template.counters
-  }),
-  (dispatch) => ({
-    addNewCounter: () => dispatch(actions.newCounter()),
-    increment: (id) => dispatch(actions.increment(id)),
-    decrement: (id) => dispatch(actions.decrement(id)),
-    incrementWithDelay: (id) => dispatch(actions.incrementWithDelay(id))
-  })
+  mapStateToProps,
+  mapDispatchToProps
 )(App)

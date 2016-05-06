@@ -12,22 +12,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 5
+  },
+  active : {
+    backgroundColor:'red',
+    borderBottomWidth : 2,
+    borderBottomColor : 'blue'
   }
 });
 
 const Button = (props) => {
-  const { children, onClick } = props;
+  const { children, onClick , isActive } = props;
 
   return (
     <TouchableOpacity onPress={onClick} style={styles.button}>
-      <Text>{children}</Text>
+      <Text style={isActive? styles.active : null }>{children}</Text>
     </TouchableOpacity>
   )
 };
-
 Button.PropTypes = {
   children: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  onClick: React.PropTypes.func.isRequired,
+  isActive : React.PropTypes.bool.isRequired
 };
 
 export default Button
