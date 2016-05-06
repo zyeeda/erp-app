@@ -1,4 +1,4 @@
-#####Here's the excellent blog which guide your throught how to build a redux/react app step by step
+#####Here's an excellent blog which guide your throught how to build a redux/react app step by step
 
 when your finish this blog , you should know : 
 
